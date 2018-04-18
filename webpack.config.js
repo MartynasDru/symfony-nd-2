@@ -1,5 +1,5 @@
-var Encore = require('@symfony/webpack-encore');
-+const EmitFile = require('./tools/webpack-plugins/EmitFile');
+const Encore = require('@symfony/webpack-encore');
+const EmitFile = require('./tools/webpack-plugins/EmitFile');
 
 Encore
     // the project directory where compiled assets will be stored
@@ -13,17 +13,16 @@ Encore
 
     // uncomment to define the assets of the project
     .addEntry('js/app', [
-      './assets/js/app.js'
+        './assets/js/app.js',
+        './assets/js/react.jsx'
     ])
-    .addEntry('js/validation', [
-      './assets/js/validation.js'
-    ])
+    .addEntry('js/validation',
+        './assets/js/validation.js'
+    )
     .addStyleEntry('css/app', './assets/css/app.scss')
 
     // uncomment if you use Sass/SCSS files
     .enableSassLoader()
-
-    // uncomment if you use React
     .enableReactPreset()
 
     // Custom WebPack plugin

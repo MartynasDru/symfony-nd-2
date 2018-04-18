@@ -68,7 +68,7 @@ class PeopleController extends Controller
 
    public function getStudents() {
      $students = [];
-     $json = file_get_contents("build/data.json");
+     $json = file_get_contents("data.json");
      $storage = json_decode($json, true);
 
      foreach($storage as $teamData) {
@@ -82,7 +82,7 @@ class PeopleController extends Controller
 
    public function getTeams() {
      $teams = [];
-     $json = file_get_contents("build/data.json");
+     $json = file_get_contents("data.json");
      $storage = json_decode($json, true);
 
      foreach($storage as $teamdata => $key) {
